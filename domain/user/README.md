@@ -1,5 +1,5 @@
 User 
-````json
+```json
 {
   "id":"uuid",
   "email":"email@example.com",
@@ -19,9 +19,9 @@ User
 
 ### Estructure
 
-User: Aggregate Root
-id: Value Object
-email: Value Object
-password: Value Object
-ip: Value Object
-acceptedAt: Value Object
+- User: Aggregate Root
+- id: Value Object
+- email: Value Object
+- password: Value Object
+- ip: Value Object
+- acceptedAt: Value Object
