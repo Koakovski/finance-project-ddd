@@ -10,4 +10,9 @@ describe('EmailValueObject', () => {
     const email = EmailValueObject.create('invalid_mail');
     expect(email.isFail()).toBe(true);
   });
+
+  it('should normalize the email to lower case', () => {
+    const email = EmailValueObject.create('Valid_Mail@DOMAin.coM');
+    expect(email.value().get('value')).toBe('valid_mail@domain.com');
+  });
 });
