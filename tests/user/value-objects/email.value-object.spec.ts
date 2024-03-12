@@ -1,9 +1,10 @@
 import { EmailValueObject } from 'domain/user/value-objects/email.value-object';
 
 describe('EmailValueObject', () => {
-  it('should return a valid email', () => {
+  it('should create a valid email', () => {
     const result = EmailValueObject.create('valid_mail@domain.com');
     expect(result.isFail()).toBe(false);
+    expect(result.value().get('value')).toBe('valid_mail@domain.com');
   });
 
   it('should return fail if providaded a invalid email', () => {
