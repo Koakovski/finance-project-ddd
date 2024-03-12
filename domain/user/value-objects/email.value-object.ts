@@ -15,7 +15,7 @@ export class EmailValueObject extends ValueObject<EmailValueObjectProps> {
     if (!isValidEmail) {
       return Result.fail('Invalid Email');
     } else {
-      return Result.Ok(new EmailValueObject({ value: email }));
+      return Result.Ok(new EmailValueObject({ value: email.toLowerCase() }));
     }
   }
 }
