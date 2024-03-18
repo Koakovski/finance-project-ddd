@@ -1,23 +1,28 @@
-User 
+# User
+
 ```json
 {
-  "id":"uuid",
-  "email":"email@example.com",
-  "password":"12345678",
-  "terms":[
+  "id": "uuid",
+  "email": "email@example.com",
+  "password": "12345678",
+  "budgetBoxIds": ["uuid", "uuid"],
+  "totalBalanceBoxAvailable": 10.0,
+  "terms": [
     {
-    "ip":"120.06.09.011",
-    "acceptedAt": "2024-03-06T22:00:00.000Z"
-    },
-    {
-    "ip":"120.06.09.011",
-    "acceptedAt": "2024-04-06T08:00:00.000Z"
+      "ip": "120.06.09.011",
+      "acceptedAt": "2024-03-06T22:00:00.000Z",
+      "userAgent": {
+        "name": "firefox",
+        "version": "86.0.0",
+        "os": "Linux",
+        "type": "browser"
+      }
     }
   ]
 }
 ```
 
-### Estructure
+## Estructure
 
 - User: Aggregate Root
 - id: Value Object
