@@ -1,5 +1,4 @@
 import { AcceptedAtValueObject } from 'domain/user/value-objects/accepted-at.value-object';
-import { IpValueObject } from 'domain/user/value-objects/ip.value-object';
 
 describe('AcceptedAtValueObject', () => {
   it('should create a valid acceptance date', () => {
