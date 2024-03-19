@@ -5,7 +5,12 @@ import { AcceptedAtValueObject } from './accepted-at.value-object';
 export const OS = {
   LINUX: 'LINUX',
   WINDOWS: 'WINDOWS',
-  MACOS: 'MACOS',
+  MAC: 'MAC',
+  IPHONE: 'IPHONE',
+  APPLE: 'APPLE',
+  MACINTOSH: 'MACINTOSH',
+  ANDROID: 'ANDROID',
+  IPAD: 'IPAD',
 } as const;
 
 export type OS = (typeof OS)[keyof typeof OS];
