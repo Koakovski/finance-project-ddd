@@ -8,18 +8,22 @@ describe('DescriptionValueObject', () => {
     expect(result.value().value).toBe('some description');
   });
 
-  it('should fail if provide an invalid description', () => {
+  it('should fail if provide an empty string', () => {
+    const result = DescriptionValueObject.create('');
+    expect(result.isFail()).toBe(true);
+    expect(result.error()).toBe('Invalid Description length min 1 char and max 30 char');
+  });
+
+  it('should fail if provide an too large description', () => {
     const result = DescriptionValueObject.create(
       'invalid_invalid_invalid_invalid_invalid_invalid_invalid',
     );
     expect(result.isFail()).toBe(true);
-    expect(result.error()).toBe('Invalid Description');
+    expect(result.error()).toBe('Invalid Description length min 1 char and max 30 char');
   });
 
-  it('should fail trim the provided description', () => {
-    const result = DescriptionValueObject.create(
-      '   some description ',
-    );
+  it('should trim the provided description', () => {
+    const result = DescriptionValueObject.create('   some description ');
     expect(result.value().value).toBe('some description');
   });
 });
