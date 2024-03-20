@@ -22,8 +22,8 @@ describe('DescriptionValueObject', () => {
     expect(result.error()).toBe('Invalid Description length min 1 char and max 30 char');
   });
 
-  it('should trim the provided description', () => {
-    const result = DescriptionValueObject.create('   some description ');
+  it('should trim and makel lower case the provided description', () => {
+    const result = DescriptionValueObject.create('   Some desCRiptIOn ');
     expect(result.value().value).toBe('some description');
   });
 });

@@ -18,7 +18,7 @@ export class DescriptionValueObject extends ValueObject<DescriptionValueObjectPr
       return Result.fail('Invalid Description length min 1 char and max 30 char');
     } else {
       return Result.Ok(
-        new DescriptionValueObject({ value: trimmedDescription }),
+        new DescriptionValueObject({ value: trimmedDescription.toLowerCase() }),
       );
     }
   }
