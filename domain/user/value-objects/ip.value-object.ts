@@ -1,6 +1,5 @@
 import { IpRegex } from 'domain/regex/ip.regex';
 import { IResult, Result, ValueObject } from 'types-ddd';
-import isEmail from 'validator/lib/isEmail';
 
 export type IpValueObjectProps = {
   value: string;
@@ -9,6 +8,10 @@ export type IpValueObjectProps = {
 export class IpValueObject extends ValueObject<IpValueObjectProps> {
   private constructor(props: IpValueObjectProps) {
     super(props);
+  }
+
+  get value(): string {
+    return this.props.value;
   }
 
   public static create(ip: string): IResult<IpValueObject> {

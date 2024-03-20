@@ -9,6 +9,10 @@ export class PasswordValueObject extends ValueObject<PasswordValueObjectProps> {
     super(props);
   }
 
+  get value(): string {
+    return this.props.value;
+  }
+
   public static create(password: string): IResult<PasswordValueObject> {
     if (password.length < 3) {
       return Result.fail('Password must have min 3 char length');

@@ -15,6 +15,22 @@ export class UserAggregate extends Aggregate<UserAggregateProps> {
     super(props);
   }
 
+  get email(): EmailValueObject {
+    return this.props.email;
+  }
+
+  get password(): PasswordValueObject {
+    return this.props.password;
+  }
+
+  get totalBalanceAvailable(): number {
+    return this.props.totalBalanceAvailable;
+  }
+
+  get terms(): TermValueObject[] {
+    return this.props.terms;
+  }
+
   static create(props: UserAggregateProps): IResult<UserAggregate> {
     return Result.Ok(
       new UserAggregate({

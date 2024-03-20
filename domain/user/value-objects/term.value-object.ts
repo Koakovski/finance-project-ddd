@@ -44,6 +44,18 @@ export class TermValueObject extends ValueObject<TermValueObjectProps> {
     super(props);
   }
 
+  get ip(): IpValueObject {
+    return this.props.ip;
+  }
+
+  get acceptedAt(): AcceptedAtValueObject {
+    return this.props.acceptedAt;
+  }
+
+  get userAgent(): UserAgent {
+    return this.props.userAgent;
+  }
+
   public static create(
     props: TermValueObjectCreateProps,
   ): IResult<TermValueObject> {
