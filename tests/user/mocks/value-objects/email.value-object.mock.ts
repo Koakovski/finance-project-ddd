@@ -1,4 +1,4 @@
-import { EmailValueObject } from 'types-ddd';
+import { EmailValueObject } from "domain/user/value-objects/email.value-object";
 
 export class EmailValueObjectMock {
   static build(email?: string): EmailValueObject {
