@@ -4,7 +4,7 @@ describe('EmailValueObject', () => {
   it('should create a valid email', () => {
     const result = EmailValueObject.create('valid_mail@domain.com');
     expect(result.isFail()).toBe(false);
-    expect(result.value().get('value')).toBe('valid_mail@domain.com');
+    expect(result.value().value).toBe('valid_mail@domain.com');
   });
 
   it('should return fail if providaded a invalid email', () => {
@@ -14,6 +14,6 @@ describe('EmailValueObject', () => {
 
   it('should normalize the email to lower case', () => {
     const result = EmailValueObject.create('Valid_Mail@DOMAin.coM');
-    expect(result.value().get('value')).toBe('valid_mail@domain.com');
+    expect(result.value().value).toBe('valid_mail@domain.com');
   });
 });

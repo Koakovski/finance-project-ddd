@@ -11,10 +11,6 @@ export interface UserAggregateProps {
 }
 
 export class UserAggregate extends Aggregate<UserAggregateProps> {
-  private constructor(props: UserAggregateProps) {
-    super(props);
-  }
-
   get email(): EmailValueObject {
     return this.props.email;
   }

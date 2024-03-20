@@ -6,10 +6,6 @@ export type IpValueObjectProps = {
 };
 
 export class IpValueObject extends ValueObject<IpValueObjectProps> {
-  private constructor(props: IpValueObjectProps) {
-    super(props);
-  }
-
   get value(): string {
     return this.props.value;
   }

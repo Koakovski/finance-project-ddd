@@ -40,10 +40,6 @@ export type TermValueObjectCreateProps = {
 };
 
 export class TermValueObject extends ValueObject<TermValueObjectProps> {
-  private constructor(props: TermValueObjectProps) {
-    super(props);
-  }
-
   get ip(): IpValueObject {
     return this.props.ip;
   }

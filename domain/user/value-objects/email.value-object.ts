@@ -6,12 +6,8 @@ export type EmailValueObjectProps = {
 };
 
 export class EmailValueObject extends ValueObject<EmailValueObjectProps> {
-  private constructor(props: EmailValueObjectProps) {
-    super(props);
-  }
-
-  get value():string{
-    return this.props.value
+  get value(): string {
+    return this.props.value;
   }
 
   public static create(email: string): IResult<EmailValueObject> {

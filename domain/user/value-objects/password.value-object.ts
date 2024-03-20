@@ -5,10 +5,6 @@ export type PasswordValueObjectProps = {
 };
 
 export class PasswordValueObject extends ValueObject<PasswordValueObjectProps> {
-  private constructor(props: PasswordValueObjectProps) {
-    super(props);
-  }
-
   get value(): string {
     return this.props.value;
   }

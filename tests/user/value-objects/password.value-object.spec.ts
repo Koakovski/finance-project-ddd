@@ -4,7 +4,7 @@ describe('PasswordValueObject', () => {
   it('should return a valid password', () => {
     const result = PasswordValueObject.create('123abc');
     expect(result.isFail()).toBe(false);
-    expect(result.value().get('value')).toBe('123abc');
+    expect(result.value().value).toBe('123abc');
   });
 
   it('should return fail if password do not have at least 3 char length', () => {

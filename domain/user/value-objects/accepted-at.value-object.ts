@@ -6,10 +6,6 @@ export type AcceptedAtValueObjectProps = {
 };
 
 export class AcceptedAtValueObject extends ValueObject<AcceptedAtValueObjectProps> {
-  private constructor(props: AcceptedAtValueObjectProps) {
-    super(props);
-  }
-
   get value(): string {
     return format(this.props.value, 'yyyy-MM-dd hh:mm:ss');
   }
