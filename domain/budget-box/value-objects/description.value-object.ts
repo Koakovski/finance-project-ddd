@@ -1,5 +1,4 @@
 import { IResult, Result, ValueObject } from 'types-ddd';
-import isEmail from 'validator/lib/isEmail';
 
 export type DescriptionValueObjectProps = {
   value: string;
