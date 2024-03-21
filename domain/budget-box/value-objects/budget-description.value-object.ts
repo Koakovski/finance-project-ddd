@@ -1,15 +1,15 @@
 import { IResult, Result, ValueObject } from 'types-ddd';
 
-export type DescriptionValueObjectProps = {
+export type BudgetDescriptionValueObjectProps = {
   value: string;
 };
 
-export class DescriptionValueObject extends ValueObject<DescriptionValueObjectProps> {
+export class BudgetDescriptionValueObject extends ValueObject<BudgetDescriptionValueObjectProps> {
   get value(): string {
     return this.props.value;
   }
 
-  public static create(description: string): IResult<DescriptionValueObject> {
+  public static create(description: string): IResult<BudgetDescriptionValueObject> {
     const trimmedDescription = description.trim();
     const isValidDescriptionLength =
       trimmedDescription.length >= 1 && trimmedDescription.length <= 30;
@@ -17,7 +17,7 @@ export class DescriptionValueObject extends ValueObject<DescriptionValueObjectPr
       return Result.fail('Invalid Description length min 1 char and max 30 char');
     } else {
       return Result.Ok(
-        new DescriptionValueObject({ value: trimmedDescription.toLowerCase() }),
+        new BudgetDescriptionValueObject({ value: trimmedDescription.toLowerCase() }),
       );
     }
   }
