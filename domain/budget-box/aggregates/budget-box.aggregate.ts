@@ -43,6 +43,10 @@ export class BudgetBoxAggregate extends Aggregate<BudgetBoxAggregateProps> {
   }
 
   static create(props: BudgetBoxAggregateProps): IResult<BudgetBoxAggregate> {
+    if (!props.isPercentual && props.budgetPercentage.value !== 100) {
+      props.budgetPercentage.setDefaultValueForBenefit()
+    }
+
     return Result.Ok(new BudgetBoxAggregate(props));
   }
 }

@@ -26,4 +26,14 @@ describe('BudgetBoxAggregate', () => {
 
     expect(result.isFail()).toBe(false);
   });
+
+  
+  it('should create a valid budget box with correct budgetPercentage if isPercentual is false', () => {
+    const props = makeProps();
+    props.isPercentual = false
+    props.budgetPercentage = PercentageValueObjectMock.build(1)
+    const result = BudgetBoxAggregate.create(props);
+
+    expect(result.value().budgetPercentage.value).toBe(100);
+  });
 });
