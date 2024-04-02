@@ -13,6 +13,16 @@ export interface BudgetBoxAggregateProps {
   reasons: ReasonDomainEntity[];
 }
 
+export interface BudgetBoxAggregateCreateProps {
+  ownerId: UID;
+  description: BudgetDescriptionValueObject;
+  balanceAvailable: number;
+  isPercentual: boolean;
+  budgetPercentage: PercentageValueObject;
+  transactionIds: UID[];
+  reasons: ReasonDomainEntity[];
+}
+
 export class BudgetBoxAggregate extends Aggregate<BudgetBoxAggregateProps> {
   get ownerId(): UID {
     return this.props.ownerId;
@@ -42,7 +52,9 @@ export class BudgetBoxAggregate extends Aggregate<BudgetBoxAggregateProps> {
     return this.props.reasons;
   }
 
-  static create(props: BudgetBoxAggregateProps): IResult<BudgetBoxAggregate> {
+  static create(
+    props: BudgetBoxAggregateCreateProps,
+  ): IResult<BudgetBoxAggregate> {
     if (!props.isPercentual && props.budgetPercentage.value !== 100) {
       props.budgetPercentage = PercentageValueObject.create(100).value();
     }
