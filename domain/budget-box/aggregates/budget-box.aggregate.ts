@@ -1,20 +1,20 @@
-import { Aggregate, IResult, Result } from 'types-ddd';
+import { Aggregate, IResult, Result, UID } from 'types-ddd';
 import { BudgetDescriptionValueObject } from '../value-objects/budget-description.value-object';
 import { PercentageValueObject } from '../value-objects/percentage.value-object';
 import { ReasonDomainEntity } from '../entities/reason.domain-entity';
 
 export interface BudgetBoxAggregateProps {
-  ownerId: string;
+  ownerId: UID;
   description: BudgetDescriptionValueObject;
   balanceAvailable: number;
   isPercentual: boolean;
   budgetPercentage: PercentageValueObject;
-  transactionIds: string[];
+  transactionIds: UID[];
   reasons: ReasonDomainEntity[];
 }
 
 export class BudgetBoxAggregate extends Aggregate<BudgetBoxAggregateProps> {
-  get ownerId(): string {
+  get ownerId(): UID {
     return this.props.ownerId;
   }
 
@@ -34,7 +34,7 @@ export class BudgetBoxAggregate extends Aggregate<BudgetBoxAggregateProps> {
     return this.props.budgetPercentage;
   }
 
-  get transactionIds(): string[] {
+  get transactionIds(): UID[] {
     return this.props.transactionIds;
   }
 
