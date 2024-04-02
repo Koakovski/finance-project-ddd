@@ -9,10 +9,6 @@ export class PercentageValueObject extends ValueObject<PercentageValueObjectProp
     return this.props.value;
   }
 
-  setDefaultValueForBenefit() {
-    this.props.value = 100;
-  }
-
   public static create(percentage: number): IResult<PercentageValueObject> {
     const isMinValidPercentage = percentage >= 0;
     if (!isMinValidPercentage) {
