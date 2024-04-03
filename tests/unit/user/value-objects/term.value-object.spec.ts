@@ -1,4 +1,4 @@
-import { AcceptedAtValueObject } from 'domain/user/value-objects/accepted-at.value-object';
+import { DateValueObject } from 'domain/common/date.value-object';
 import { IpValueObject } from 'domain/user/value-objects/ip.value-object';
 import {
   TermValueObject,
@@ -9,7 +9,7 @@ describe('TermValueObject', () => {
   function makeProps(): TermValueObjectCreateProps {
     return {
       ip: IpValueObject.create('123.123.123.123').value(),
-      acceptedAt: AcceptedAtValueObject.create(
+      acceptedAt: DateValueObject.create(
         new Date('2020-01-02 10:00:00'),
       ).value(),
       userAgent: {

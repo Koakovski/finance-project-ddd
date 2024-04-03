@@ -1,6 +1,6 @@
 import { IResult, Result, ValueObject } from 'types-ddd';
 import { IpValueObject } from './ip.value-object';
-import { AcceptedAtValueObject } from './accepted-at.value-object';
+import { DateValueObject } from 'domain/common/date.value-object';
 
 export const OS = {
   LINUX: 'LINUX',
@@ -24,13 +24,13 @@ export type UserAgent = {
 
 export type TermValueObjectProps = {
   ip: IpValueObject;
-  acceptedAt: AcceptedAtValueObject;
+  acceptedAt: DateValueObject;
   userAgent: UserAgent;
 };
 
 export type TermValueObjectCreateProps = {
   ip: IpValueObject;
-  acceptedAt: AcceptedAtValueObject;
+  acceptedAt: DateValueObject;
   userAgent: {
     name: string;
     version: string;
@@ -44,7 +44,7 @@ export class TermValueObject extends ValueObject<TermValueObjectProps> {
     return this.props.ip;
   }
 
-  get acceptedAt(): AcceptedAtValueObject {
+  get acceptedAt(): DateValueObject {
     return this.props.acceptedAt;
   }
 
