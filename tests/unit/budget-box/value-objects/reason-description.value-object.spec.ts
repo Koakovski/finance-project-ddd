@@ -1,4 +1,5 @@
-import { ReasonDescriptionValueObject } from "domain/budget-box/value-objects/reason-description.value-object";
+import { faker } from '@faker-js/faker';
+import { ReasonDescriptionValueObject } from 'domain/budget-box/value-objects/reason-description.value-object';
 
 describe('ReasonDescriptionValueObject', () => {
   it('should create a valid description', () => {
@@ -11,15 +12,19 @@ describe('ReasonDescriptionValueObject', () => {
   it('should fail if provide an empty string', () => {
     const result = ReasonDescriptionValueObject.create('');
     expect(result.isFail()).toBe(true);
-    expect(result.error()).toBe('Invalid Description length min 1 char and max 30 char');
+    expect(result.error()).toBe(
+      'Invalid Description length min 1 char and max 30 char',
+    );
   });
 
   it('should fail if provide an too large description', () => {
     const result = ReasonDescriptionValueObject.create(
-      'invalid_invalid_invalid_invalid_invalid_invalid_invalid',
+      faker.string.alphanumeric({ length: 31 }),
     );
     expect(result.isFail()).toBe(true);
-    expect(result.error()).toBe('Invalid Description length min 1 char and max 30 char');
+    expect(result.error()).toBe(
+      'Invalid Description length min 1 char and max 30 char',
+    );
   });
 
   it('should trim and makel lower case the provided description', () => {
