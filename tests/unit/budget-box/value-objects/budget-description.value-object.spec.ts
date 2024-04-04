@@ -1,3 +1,4 @@
+import { faker } from "@faker-js/faker";
 import { BudgetDescriptionValueObject } from "domain/budget-box/value-objects/budget-description.value-object";
 
 describe('BudgetDescriptionValueObject', () => {
@@ -16,7 +17,7 @@ describe('BudgetDescriptionValueObject', () => {
 
   it('should fail if provide an too large description', () => {
     const result = BudgetDescriptionValueObject.create(
-      'invalid_invalid_invalid_invalid_invalid_invalid_invalid',
+      faker.string.alphanumeric({ length: 31 }),
     );
     expect(result.isFail()).toBe(true);
     expect(result.error()).toBe('Invalid Description length min 1 char and max 30 char');
