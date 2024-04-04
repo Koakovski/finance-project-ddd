@@ -70,6 +70,9 @@ devDependencies:
   eslint-plugin-prettier:
     specifier: ^5.0.0
     version: 5.0.0(eslint-config-prettier@9.0.0)(eslint@8.42.0)(prettier@3.0.0)
+  faker:
+    specifier: ^6.6.6
+    version: 6.6.6
   prettier:
     specifier: ^3.0.0
     version: 3.0.0
@@ -2412,6 +2415,10 @@ packages:
       chardet: 0.7.0
       iconv-lite: 0.4.24
       tmp: 0.0.33
+    dev: true
+
+  /faker@6.6.6:
+    resolution: {integrity: sha512-9tCqYEDHI5RYFQigXFwF1hnCwcWCOJl/hmll0lr5D2Ljjb0o4wphb69wikeJDz5qCEzXCoPvG6ss5SDP6IfOdg==}
     dev: true
 
   /fast-copy@3.0.1:
